@@ -1,0 +1,86 @@
+.budget-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  color: #333;
+  font-weight: 300;
+}
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.budget-card {
+  .budget-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .amount-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .spent {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .divider {
+    color: #999;
+  }
+
+  .total {
+    font-size: 1.1em;
+    color: #666;
+  }
+
+  .percentage {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+  }
+
+  mat-progress-bar {
+    margin-bottom: 12px;
+  }
+
+  .remaining {
+    font-size: 0.9em;
+    color: #666;
+
+    &.over-budget {
+      color: #F44336;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .budget-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+}

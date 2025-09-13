@@ -1,0 +1,184 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  margin-right: 2rem;
+
+  .brand-icon {
+    font-size: 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 0.5rem;
+  }
+
+  .brand-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+
+    mat-icon {
+      font-size: 1.1rem;
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    &.active-link {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
+  }
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+.header-user-menu {
+  .user-avatar {
+    .avatar-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    &:hover .avatar-circle {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+// User menu styling
+::ng-deep .user-menu {
+  min-width: 250px;
+
+  .user-info {
+    padding: 1rem !important;
+    background-color: #f5f5f5;
+    cursor: default;
+
+    .user-details {
+      .user-name {
+        font-weight: 600;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 0.25rem;
+      }
+
+      .user-email {
+        font-size: 0.85rem;
+        color: #666;
+      }
+    }
+  }
+
+  .mat-mdc-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+
+    mat-icon {
+      color: #666;
+      font-size: 1.1rem;
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+
+    &:hover mat-icon {
+      color: #333;
+    }
+  }
+
+  .logout-item {
+    color: #f44336;
+
+    mat-icon {
+      color: #f44336;
+    }
+
+    &:hover {
+      background-color: rgba(244, 67, 54, 0.1);
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .header-brand {
+    margin-right: 1rem;
+
+    .brand-text {
+      display: none;
+    }
+  }
+
+  .header-nav {
+    gap: 0.25rem;
+
+    a {
+      padding: 0.5rem;
+      
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0 0.5rem;
+  }
+
+  .header-nav {
+    display: none;
+  }
+}
